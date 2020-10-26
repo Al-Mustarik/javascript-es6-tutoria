@@ -16,8 +16,13 @@ const profession = 'Data Scientist';
 
 // TEMPLATE TAGGING
 
-function modify(){
-    console.log(arguments);
+function modify(strings, ...values ){
+    // console.log(strings, values);
+    let str = "";
+    strings.forEach(function(string, i){
+        str += `${string} ${values[i] || "" }`;
+    })
+    return str;
 }
 
 const html = modify`
