@@ -6,3 +6,4 @@ JAVASCRIPT BASIC
 
 1. var, let , const
 2. template string
+3. template tagging
