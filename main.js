@@ -59,7 +59,7 @@
 // };
 // console.log(selfInfo.myBio());
 
-const marks = [80, 95, 78, 85];
+const marks = [80, 92, 95, 78, 85,];
 // const multiple = marks.map((mark, i) => 
 //     {
 //         console.log(i);
@@ -67,9 +67,32 @@ const marks = [80, 95, 78, 85];
 //     });
 // console.log(multiple);
 // console.log(marks)
-let multiple = [];
-marks.forEach(mark =>
-    {
-        multiple.push(mark * 2 ) ;
-    });
-console.log(multiple);
+// let multiple = [];
+// marks.forEach(mark =>
+//     {
+//         multiple.push(mark * 2 ) ;
+//     });
+// console.log(multiple);
+
+//Find Helper
+// const result = marks.find(mark => mark >= 90);
+
+//FindIndex Helper
+// const result = marks.findIndex(mark => mark >= 90);
+
+//Every Helper
+// const result = marks.every(mark => mark >= 90);
+
+//Some Helper
+// const result = marks.some(mark => mark >= 90);
+
+//Filter Helper
+    //return array
+// const result = marks.filter(mark => mark >= 90);
+
+//Reduce Helper
+//Add multiple Number
+const result = marks.reduce((sum, number) => {
+    return sum += number ;
+}, 0);
+console.log(result);
