@@ -60,5 +60,16 @@
 // console.log(selfInfo.myBio());
 
 const marks = [80, 95, 78, 85];
-const multiple = marks.map(mark => mark * 2);
+// const multiple = marks.map((mark, i) => 
+//     {
+//         console.log(i);
+//         return mark * 2 ;
+//     });
+// console.log(multiple);
+// console.log(marks)
+let multiple = [];
+marks.forEach(mark =>
+    {
+        multiple.push(mark * 2 ) ;
+    });
 console.log(multiple);
