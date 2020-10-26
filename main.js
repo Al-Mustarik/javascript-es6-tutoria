@@ -44,8 +44,6 @@
 
 
 //Function expression
-
-const add = function(num1 = 2, num2){
-    return num1 + num2;
-}
+//Arrow Function
+const add = (num1 = 2, num2) => num1 + num2;
 console.log(add(undefined, 2));
