@@ -45,5 +45,16 @@
 
 //Function expression
 //Arrow Function
-const add = num2 => 2 + num2;
-console.log(add(2));
+// const add = num2 => 2 + num2;
+// console.log(add(2));
+
+const selfInfo = {
+    firstName: "Nahid",
+    age: 23,
+    myBio: function(){
+        console.log(this);
+        return `I am ${this.firstName} and my age is ${this.age}`;
+    }
+
+};
+console.log(selfInfo.myBio());
