@@ -48,13 +48,17 @@
 // const add = num2 => 2 + num2;
 // console.log(add(2));
 
-const selfInfo = {
-    firstName: "Nahid",
-    age: 23,
-    myBio: function(){
-        console.log(this);
-        return `I am ${this.firstName} and my age is ${this.age}`;
-    }
+// const selfInfo = {
+//     firstName: "Nahid",
+//     age: 23,
+//     myBio: function(){
+//         console.log(this);
+//         return `I am ${this.firstName} and my age is ${this.age}`;
+//     }
 
-};
-console.log(selfInfo.myBio());
+// };
+// console.log(selfInfo.myBio());
+
+const marks = [80, 95, 78, 85];
+const multiple = marks.map(mark => mark * 2);
+console.log(multiple);
