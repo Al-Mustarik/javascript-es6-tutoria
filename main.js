@@ -8,12 +8,19 @@ const profession = 'Data Scientist';
 // }
 
 // function myBio(){
+    // TEMPLATE STRING
 //     return `My name is ${firstName.toUpperCase()} ${lastName.toUpperCase()} and my age is ${age -1} years old and I'm a professional ${profession}`;
 // }
 
 // console.log(myBio());
 
-const html = `
+// TEMPLATE TAGGING
+
+function modify(){
+    console.log(arguments);
+}
+
+const html = modify`
 
     <h1>Header</h1>
     <p> I am a paragraph </p>
