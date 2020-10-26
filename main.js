@@ -1,98 +1,26 @@
-// const firstName = 'Al';
-// const lastName = 'Mustarik';
-// const age = 25 ;
-// const profession = 'Data Scientist';
-
-// // function myBio(){
-// //     return 'my name is ' + firstName +' '+ lastName + 'and I am ' + age + 'years old ' + 'and I am a professional ' + profession ;
-// // }
-
-// // function myBio(){
-//     // TEMPLATE STRING
-// //     return `My name is ${firstName.toUpperCase()} ${lastName.toUpperCase()} and my age is ${age -1} years old and I'm a professional ${profession}`;
-// // }
-
-// // console.log(myBio());
-
-// // TEMPLATE TAGGING
-
-// function modify(strings, ...values ){
-//     // console.log(strings, values);
-//     let str = "";
-//     strings.forEach(function(string, i){
-//         str += `${string} <b> ${values[i] || "" } </b>`;
-//     })
-//     return str;
-// }
-
-// const html = modify`
-
-//     <h1>Header</h1>
-//     <p> I am a paragraph </p>
-//     <p>My name is ${firstName.toUpperCase()} ${lastName.toUpperCase()} 
-//     and my age is ${age -1} years old and I'm a professional ${profession}</p>
-
-// `;
-
-// document.body.innerHTML = html;
-
-//number function
-//Function statement
-// function add(num1, num2){
-//     return num1 + num2 ;
-// }
+// const myProfile = ["Al", "Mustarik", 26, "Data Scientist"];
+//Spread operator
+// const updatedProfile = [...myProfile ,"WEB Developer"]; //spread operator ... 
+// console.log(updatedProfile);
 
 
-//Function expression
-//Arrow Function
-// const add = num2 => 2 + num2;
-// console.log(add(2));
+// const gorceries = ["wheat", "banana"];
+// const anotherGroceries = ["salt"];
+// const updatedGroceries = [...gorceries, "milk", ...anotherGroceries];
+// console.log(updatedGroceries);
 
-// const selfInfo = {
-//     firstName: "Nahid",
-//     age: 23,
-//     myBio: function(){
-//         console.log(this);
-//         return `I am ${this.firstName} and my age is ${this.age}`;
-//     }
 
-// };
-// console.log(selfInfo.myBio());
+// const firstName = "samim";
+// const updatedName = [...firstName];
+// console.log(updatedName);
 
-const marks = [80, 92, 95, 78, 85,];
-// const multiple = marks.map((mark, i) => 
-//     {
-//         console.log(i);
-//         return mark * 2 ;
-//     });
-// console.log(multiple);
-// console.log(marks)
-// let multiple = [];
-// marks.forEach(mark =>
-//     {
-//         multiple.push(mark * 2 ) ;
-//     });
-// console.log(multiple);
 
-//Find Helper
-// const result = marks.find(mark => mark >= 90);
-
-//FindIndex Helper
-// const result = marks.findIndex(mark => mark >= 90);
-
-//Every Helper
-// const result = marks.every(mark => mark >= 90);
-
-//Some Helper
-// const result = marks.some(mark => mark >= 90);
-
-//Filter Helper
-    //return array
-// const result = marks.filter(mark => mark >= 90);
-
-//Reduce Helper
-//Add multiple Number
-const result = marks.reduce((sum, number) => {
-    return sum += number ;
-}, 0);
-console.log(result);
+//REST Operator
+function myBio(firstName, age, ...values){ //Rest Operator
+    return{
+        firstName: firstName,
+        age: age,
+        rest: [...values, "jobless"] //Spread Operator
+    };
+}
+console.log(myBio("Nahid", 25, "webdeveloper", "programmer"));

@@ -8,3 +8,4 @@ JAVASCRIPT BASIC
 2. template string
 3. template tagging
 4. Default function argument
+5. Rest - Spread - Operator
