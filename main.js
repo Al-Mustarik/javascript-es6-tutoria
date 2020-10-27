@@ -1,48 +1,14 @@
-//for loop
+const bio = {
+    [Symbol('nahid')]: {firstName: 'nahid', age: 23},
+    [Symbol('mustarik')]: {firstName: 'mustarik', age: 25}
+}
 
-const lang = ['html', 'css', 'js'];
+//converting array
+const symConv = Object.getOwnPropertySymbols(bio);
 
-//simple for loop
-// for(let i=0; i < lang.length; i++){
-//     if(lang[i] === 'css'){
-//         continue;
-//     }
-//     console.log(lang[i]);
-// }
+// const data = symConv.map(data => bio[data]);
+// console.log(data[1].firstName);
 
-//forEach loop
-
-// lang.forEach((eachlang,i) => { //continue or break don't work
-//     // if (eachlang === 'css'){
-//     //     continue;
-//     // }
-//     console.log(i, eachlang);
-// })
-
-
-//forin loop (resulting Index)
-// const obj = {
-//     firstName: 'Al',
-//     lastName: 'Mustarik'
-// }
-
-//Array Prototype
-// Array.prototype.myFunc = () => { //Access Prototype
-//     console.log('Hello...');
-// }
-// lang.last = 'Python';
-
-// for (const name in lang) {
-//     // console.log(name);
-//     console.log(lang[name]);
-// }
-
-
-//for of loop
-
-for (let [i, myLang] of lang.entries()){ //not looping object
-    if (myLang === 'css'){
-        continue;
-    }
-    console.log(i, myLang);
+for (const data of symConv){
+    console.log(bio[data]);
 }
