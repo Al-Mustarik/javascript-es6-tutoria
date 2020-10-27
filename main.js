@@ -2,25 +2,63 @@
 
 //class
 
-class Person{
+class Programmer{
     //constructor
-    constructor(name, age){
-        this.name = name;
+    //property
+    constructor(firstName, age){
+        this.firstName = firstName; //field
         this.age = age;
         this.lang = [];
-        console.log("running...");
+        console.log('Running ...')
     }
-    //method
+
+    // getfirstName(){
+    //     return this.firstName;
+    // }
+
     getBio(){
-        return `${this.name} age- ${this.age} choosenLang- ${this.lang.join(',')}`;
+        return `${this.firstName} - ${this.age} - ${this.lang}`;
     }
-    setLang(lang){
+
+    static salary(){
+        console.log("My salary $0");
+    }
+
+    //property
+    get nickName(){
+        return this.firstName;
+    }
+
+    set nickName(value){
+        this.firstName = value.toUpperCase();
+    }
+    
+    set mainLang(lang){
         this.lang.push(lang);
+    }
+
+}
+
+class specialProgrammer extends Programmer{
+
+    constructor(firstName, age, specialLang){
+        super(firstName, age) ;
+        this.specialLang = specialLang ;
+    }
+
+    getBio(){
+        return  `${super.getBio()} ${this.specialLang}` ;
+    }
+
+    get specialLng(){
+        return this.specialLang;
+    }
+    set mainLang(lang){
+        return this.lang.push(lang);
     }
 }
 
+
 //object 
-const obj1 = new Person('nahid', 23);
-console.log(obj1.getBio());
-obj1.setLang('javascript');
-console.log(obj1.getBio());
+const obj1 = new Programmer("nahid", 26);
+const obj2 = new specialProgrammer("mustarik", 26, 'golang');
