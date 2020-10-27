@@ -1,14 +1,26 @@
-const bio = {
-    [Symbol('nahid')]: {firstName: 'nahid', age: 23},
-    [Symbol('mustarik')]: {firstName: 'mustarik', age: 25}
+//Syntactic sugar
+
+//class
+
+class Person{
+    //constructor
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+        this.lang = [];
+        console.log("running...");
+    }
+    //method
+    getBio(){
+        return `${this.name} age- ${this.age} choosenLang- ${this.lang.join(',')}`;
+    }
+    setLang(lang){
+        this.lang.push(lang);
+    }
 }
 
-//converting array
-const symConv = Object.getOwnPropertySymbols(bio);
-
-// const data = symConv.map(data => bio[data]);
-// console.log(data[1].firstName);
-
-for (const data of symConv){
-    console.log(bio[data]);
-}
+//object 
+const obj1 = new Person('nahid', 23);
+console.log(obj1.getBio());
+obj1.setLang('javascript');
+console.log(obj1.getBio());
