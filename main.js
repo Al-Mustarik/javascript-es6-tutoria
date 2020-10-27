@@ -1,29 +1,18 @@
-//Fetch API
-// fetch('https://jsonplaceholder.typicode.com/comments')
-// .then(data => data.json())
-// .then(data => console.log(data))
-// .catch(e => console.log(e));
+//Generator Function
 
-//Behind the scene working with Promise
+//Gice capablity to pause and resume function
+function myAjax(url){
+    fetch(url)
+    .then(data => data.json())
+    .then(data => dataGen.next(data));
+}
 
-// function logData(data){
-    
-//     setTimeout(() => {
-//         console.log(1);
-//         setTimeout(() => {
-//             console.log(2);
-//         },2000);
-//     },2000);   
-// }
+function *placeHolderData(){
+    const post = yield myAjax('https://jsonplaceholder.typicode.com/posts/1');
+    console.log(post);
+    const comment = yield myAjax('https://jsonplaceholder.typicode.com/posts/1/comments');
+    console.log(comment);
+}
 
-// logData();
-
-const logDataP = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(Error('This is error'));
-        },2000 );
-    })
-    
-logDataP.then(data => {
-    console.log(data);
-}).catch(e => console.log(e));
+const dataGen = placeHolderData();
+dataGen.next();
